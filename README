@@ -1,0 +1,31 @@
+# <span style="color: white;">TEMA3-2024</span>
+
+# <span style="color: white;">TASK 1</span>
+
+ Funcția parcurge fiecare caracter al șirului, adăugând parantezele deschise pe stack și cand sunt inverse si egale cu ultima, se da pop la ultima de pe stiva. Dacă toate parantezele sunt echilibrate (adică stack-ul este gol la finalul verificării), funcția returnează 0, iar dacă există o neconcordanță între parantezele deschise și închise, funcția returnează 1, indicând o problemă în
+  echilibrarea parantezelor.
+
+# <span style="color: white;">TASK 2</span>
+
+## <span style="color: white;">SUBTASK 2.1</span>
+
+Funcția folosește o tehnică numită partajare pentru a împărți vectorul în două sub-vectori în funcție de un element pivot, apoi aplică recursiv aceeași logică de sortare pe aceste segmente. În cadrul fiecărui apel recursiv, funcția determină noua poziție a pivotului, interschimbă elementele pentru a plasa toate valorile mai mici decât pivotul înainte de acesta și toate valorile mai mari după el, apoi continuă să sorteze recursiv segmentele rămase nesortate. 
+
+## <span style="color: white;">SUBTASK 2.2</span>
+
+Procesul începe prin calcularea indexului mijlocului între capetele curente ale segmentului (stocate în registrele esi pentru capătul stâng și ebx pentru capătul drept). Elementul de la mijloc este comparat cu valoarea căutată (edx). Dacă valorile sunt egale, se returnează poziția acestuia (înregistrată în eax). Dacă valoarea căutată este mai mică decât elementul de la mijloc, funcția reapelează recursiv pentru partea stângă a segmentului; dacă este mai mare, pentru partea dreaptă.
+
+# <span style="color: white;">TASK 3</span>
+
+Aceasta folosește un vector visited pentru a marca nodurile vizitate și apelează recursiv pe sine pentru a explora vecinii fiecărui nod, determinați printr-o funcție externă expand. Procesul include afișarea fiecărui nod vizitat și continuă până când toți vecinii sunt explorați, folosind gestiunea stivei pentru a menține contextul apelurilor recursive.
+
+# <span style="color: white;">BONUS</span>
+
+## <span style="color: white;">REDUCE</span>
+
+Funcția reduce implementată în limbajul de asamblare x86-64 este un algoritm care procesează elementele unei liste pentru a genera un singur rezultat, folosind o funcție specificată de utilizator. Aceasta începe prin inițializarea acumulatorului cu o valoare inițială (acc_init) și își propune să parcurgă fiecare element al listei, aplicând funcția (f) pe elementul curent și valoarea acumulată. La fiecare iterație, rezultatul funcției este stocat înapoi în acumulator (r14). Procesul continuă până când toate elementele listei sunt procesate (controlat prin decrementarea contorului r13 la fiecare pas). La finalul execuției, rezultatul final este păstrat în acumulator și funcția se încheie, returnând acest rezultat.
+
+## <span style="color: white;">MAP</span>
+
+Aceasta începe prin configurarea cadrului de stivă și inițializarea contorului de buclă. În cadrul buclei, fiecare element din array-ul sursă este preluat și procesat prin funcția transformativă (a cărei adresă este primită ca parametru), iar rezultatul este salvat în poziția corespunzătoare din array-ul destinație. Procesul continuă până când toate elementele din array-ul sursă sunt procesate, după care funcția se încheie și returnează controlul la apelant. 
+
